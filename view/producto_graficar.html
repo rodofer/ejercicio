@@ -1,0 +1,32 @@
+
+
+
+<canvas id="myChart" width="400" height="auto"></canvas>
+
+
+
+<script>
+
+// {producto_nombre} y {producto_ventas} son reemplazados en el métido Render por datos definidos en el controlador
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [{producto_nombre}],
+        datasets: [{
+            label: '# de ventas',
+            data: [{producto_ventas}],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>

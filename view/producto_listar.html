@@ -1,0 +1,48 @@
+
+
+
+<table class='table table-hover'>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Estado</th>
+            <th>Vendidos</th>
+        </tr>
+    </thead>
+    <tbody id='productos'>
+    </tbody>
+</table>
+
+
+
+<script>
+
+$(document).ready(function()
+{
+
+    const contenedor_productos = $('#productos');
+
+    // {productos} es reemplazado por datos JSON en el método RENDER
+    const productos = {productos};
+
+
+    // Esta iteración agrega filas a la tabla Productos, según datos JSON anteriores
+    for(var i=0; i<productos.length; i++)
+    {
+        contenedor_productos.append(
+            "<tr>"
+                +"<td>" + productos[i].id + "</td>"
+                +"<td>" + productos[i].nombre_producto + "</td>"
+                +"<td>" + productos[i].precio + "</td>"
+                +"<td>" + productos[i].stock + "</td>"
+                +"<td>" + productos[i].estado + "</td>"
+                +"<td>" + productos[i].vendidos + "</td>"
+            +"</tr>"
+        );
+    }
+});
+
+</script>
